@@ -8,8 +8,39 @@ readme = "README.md"
 [tool.poetry.dependencies]
 python = "^3.10"
 mcp = "^1.1.1"
+ruff = "^0.8.2"
 
 
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
+
+[tool.ruff]
+line-length = 100
+
+[tool.ruff.lint]
+select = [
+    "E",   # pycodestyle errors
+    "F",   # pyflakes
+    "W",   # pycodestyle warnings
+    "C",   # mccabe complexity
+    "B",   # flake8-bugbear
+    "N",   # pep8-naming
+    "I",   # isort
+    "D",   # pydocstyle
+    "UP",  # pyupgrade
+    "S",   # flake8-bandit
+]
+ignore = [
+    "D203", # Removing one-blank-line-before-class in favor of D211
+    "D213", # Removing multi-line-summary-second-line in favor of D212
+    "D100", # Module docstring
+    "D103", # Function docstring
+    "D104", # Docstring in public package
+]
+exclude = [
+    ".git",
+    ".ruff_cache",
+    ".venv",
+]
+

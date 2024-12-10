@@ -1,8 +1,9 @@
 # Assumes main code is in server.py
-from . import server
 import asyncio
+
+from . import server
 
 
 def main():
-    """Main entry point for the package."""
+    """Enter package here (called via __main__.py)."""
     asyncio.run(server.main())
